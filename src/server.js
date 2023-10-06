@@ -2,7 +2,7 @@ import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import logger from 'morgan';
-import { globalRouter, authRouter, roomsRouter, privatsRouter } from './routes/index.js';
+import { globalRouter, authRouter, roomsRouter, privatsRouter, userRouter } from './routes/index.js';
 import { errorsMidleware } from './middlewares/index.js';
 
 import { dbConnect } from './services/dbConnect.js';
@@ -29,6 +29,7 @@ server.use('/', globalRouter);
 server.use('/auth', authRouter);
 server.use('/rooms', roomsRouter);
 server.use('/private', privatsRouter);
+server.use('/user', userRouter);
 
 server.use(errorsMidleware);
 
