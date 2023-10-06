@@ -10,6 +10,10 @@ export class ApiError extends Error {
     return new ApiError(400, message, errors);
   }
 
+  static NotValidData(message, errors) {
+    return new ApiError(422, message, errors);
+  }
+
   static Unauthorized() {
     return new ApiError(401,'User is not authorized');
   }
