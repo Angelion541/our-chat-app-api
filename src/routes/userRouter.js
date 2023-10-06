@@ -4,4 +4,4 @@ import { ctrlWrapper } from "../middlewares/ctrlWrapper.js";
 
 export const userRouter = express.Router();
 
-updateUserRouter.put("/update", ctrlWrapper(userController.updateUser));
+userRouter.put("/update", ctrlWrapper(userController.updateUser));
