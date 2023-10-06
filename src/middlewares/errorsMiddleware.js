@@ -5,9 +5,9 @@ export function errorsMidleware(error, req, res, next) {
     const { status, message, errors } = error;
 
     res.status(status).send({ message, errors });
+
+    return;
   }
 
-  res.status(500).send({
-    message: 'Unexpected error',
-  });
+  res.status(500).send({ message: 'Unexpected error' });
 };
