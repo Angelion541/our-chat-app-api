@@ -2,10 +2,16 @@ import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import logger from 'morgan';
-import { globalRouter, authRouter, roomsRouter, privatsRouter, userRouter } from './routes/index.js';
-import { errorsMidleware } from './middlewares/index.js';
-
 import { dbConnect } from './services/dbConnect.js';
+import { errorsMidleware } from './middlewares/index.js';
+import {
+  globalRouter,
+  authRouter,
+  roomsRouter,
+  privatsRouter,
+  userRouter
+} from './routes/index.js';
+
 
 
 const PORT = process.env.SERVER_PORT || 8080;
