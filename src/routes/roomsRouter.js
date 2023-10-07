@@ -4,5 +4,6 @@ import { ctrlWrapper } from '../middlewares/ctrlWrapper.js';
 
 export const roomsRouter = Router();
 
-roomsRouter.post('/', ctrlWrapper(roomsController.getRooms));
-roomsRouter.post('/add', ctrlWrapper(roomsController.addNewRoom));
+roomsRouter.get('/', ctrlWrapper(roomsController.GetRooms));
+roomsRouter.get('/:id', ctrlWrapper(roomsController.GetRoomById));
+// roomsRouter.post('/add', ctrlWrapper(roomsController.addNewRoom));
